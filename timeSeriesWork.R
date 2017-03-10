@@ -9,19 +9,6 @@ library("forecast") # load the "forecast" R library
 
 
 ##################   import data  #########################
-# Different car types (make/model) can require different data import processes, esp. for salesdate.
-# Pre-processing in Excel is sometimes necessary.  Text-to-column was used to split the date field components 
-# all the way down to year, month before importing in one instance.  In another case, the data was foramted such
-# that all the work could be done cleanly within R.  
-# 
-# Test it step-wise through the import to ensure the data has been accurately imported.  The template commands
-# below will faciliate this process, but all commands will not have to be run.
-
-###  filter by the desired make & model in Excel and then remove all columns(if desired) 
-# keeping the columns: grossprofit,modelname,	salesdate (and any columns derived from sales date)
-### data import may need to come from an txt, xls or an xlsx file.  
-# If salesdate looks like this, 41846, instead of a date, resave it as xls or txt and try again.  If it still
-# isn't working, try splitting the data components out using the Excel tool text-to-column.
 
 #use one of these, depending on file type
 data <- read_excel("pilot.xlsx")
